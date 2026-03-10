@@ -3,16 +3,58 @@ import { motion } from "motion/react";
 
 const testimonials = [
     {
-        text: "Chikezie delivered a powerful platform that exceeded our expectations. His technical ability and attention to detail made the entire development process smooth.",
+        text: "Chikezie's ability to turn complex logic into a seamless user experience is unparalleled. The dashboard he built for us is both beautiful and lightning-fast.",
         image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop",
         name: "Sarah Chen",
         role: "Product Lead at TechFlow",
     },
     {
-        text: "Working with Chikezie was a great experience. He understands both technology and product thinking.",
+        text: "The full-stack application he delivered exceeded our expectations. His expertise in React and Node.js helped us scale our user base by 300% without a hitch.",
         image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=150&auto=format&fit=crop",
         name: "David Miller",
         role: "CTO at Nexus AI",
+    },
+    {
+        text: "Exceptional problem solver. He integrated an LLM-based feature into our existing architecture seamlessly. Truly a forward-thinking developer.",
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&auto=format&fit=crop",
+        name: "Jessica Wu",
+        role: "Engineering Manager",
+    },
+    {
+        text: "Clean code, great communication, and a deep understanding of software design patterns. Chikezie is a rare talent in the full-stack space.",
+        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&auto=format&fit=crop",
+        name: "Marcus Thorne",
+        role: "Senior Architect",
+    },
+    {
+        text: "His contribution to our DevOps pipeline saved us hours of manual work. The automation he implemented is robust and extremely reliable.",
+        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop",
+        name: "Elena Rodriguez",
+        role: "Platform Engineer",
+    },
+    {
+        text: "I was impressed by how quickly he picked up our legacy codebase and refactored it for modern performance standards. Highly recommended.",
+        image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=150&auto=format&fit=crop",
+        name: "Kevin Park",
+        role: "Tech Lead",
+    },
+    {
+        text: "A truly professional software engineer. He doesn't just write code; he thinks about the business impact and scalability from day one.",
+        image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=150&auto=format&fit=crop",
+        name: "James Wilson",
+        role: "Venture Partner",
+    },
+    {
+        text: "The animations and micro-interactions he added made our landing page feel world-class. His eye for detail is second to none.",
+        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop",
+        name: "Sofia Giraldo",
+        role: "UI/UX Director",
+    },
+    {
+        text: "Reliable, efficient, and technically brilliant. Chikezie is my go-to developer for any complex API integrations or structural shifts.",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop",
+        name: "Alex Thompson",
+        role: "Backend Lead",
     },
 ];
 
