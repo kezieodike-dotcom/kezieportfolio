@@ -24,10 +24,9 @@ export default function Footer() {
               <a href="#skills" className="text-sm text-slate-400 hover:text-primary transition-colors">Stack</a>
             </div>
             <div className="flex flex-col gap-4">
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Resources</p>
-              <a href="#" className="text-sm text-slate-400 hover:text-primary transition-colors">Blog</a>
-              <a href="#" className="text-sm text-slate-400 hover:text-primary transition-colors">GitHub</a>
-              <a href="#" className="text-sm text-slate-400 hover:text-primary transition-colors">Newsletter</a>
+              <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Contact</p>
+              <a href="mailto:kezieodike@gmail.com" className="text-sm text-slate-400 hover:text-primary transition-colors">kezieodike@gmail.com</a>
+              <a href="https://wa.me/2348106549123" className="text-sm text-slate-400 hover:text-primary transition-colors">+234 810 654 9123</a>
             </div>
           </div>
         </div>

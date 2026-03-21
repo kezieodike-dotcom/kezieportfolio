@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Twitter, MessageCircle } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -16,7 +16,7 @@ export default function Hero() {
           className="max-w-xl"
         >
           {/* Eyebrow */}
-          <p className="text-[#00d4ff] font-bold text-[15px] mb-4">
+          <p className="text-primary font-bold text-[15px] mb-4">
             Welcome to my portfolio
           </p>
 
@@ -41,20 +41,23 @@ export default function Hero() {
               View My Work
             </a>
             <a href="#contact" className="btn-outline">
-              Start a Project
+              Contact me
             </a>
           </div>
 
           {/* Social Links */}
           <div className="flex gap-4">
-            <a href="#" className="btn-social">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="btn-social">
               <Github className="size-5" />
             </a>
-            <a href="#" className="btn-social">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="btn-social">
               <Linkedin className="size-5" />
             </a>
-            <a href="#" className="btn-social">
+            <a href="https://x.com/ChikezieEmman19" target="_blank" rel="noopener noreferrer" className="btn-social">
               <Twitter className="size-5" />
+            </a>
+            <a href="https://wa.me/2348106549123" target="_blank" rel="noopener noreferrer" className="btn-social">
+              <MessageCircle className="size-5" />
             </a>
           </div>
         </motion.div>

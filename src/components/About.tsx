@@ -10,7 +10,7 @@ export default function About() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-[32px] md:text-[40px] font-bold text-white mb-4">
-            About <span className="text-[#00d4ff]">Me</span>
+            About <span className="text-primary">Me</span>
           </h2>
           <p className="text-slate-400 text-[15px] md:text-[16px]">
             Technology is powerful when it solves real problems.
@@ -41,15 +41,15 @@ export default function About() {
             {/* Stats Row */}
             <div className="grid grid-cols-3 gap-4 border-t border-b border-white/10 py-8 mb-8">
               <div className="text-center">
-                <p className="text-[#00d4ff] text-[32px] font-bold mb-1">50+</p>
+                <p className="text-primary text-[32px] font-bold mb-1">50+</p>
                 <p className="text-slate-400 text-[13px] font-medium">Projects Completed</p>
               </div>
               <div className="text-center">
-                <p className="text-[#00d4ff] text-[32px] font-bold mb-1">3+</p>
+                <p className="text-primary text-[32px] font-bold mb-1">3+</p>
                 <p className="text-slate-400 text-[13px] font-medium">Years Experience</p>
               </div>
               <div className="text-center">
-                <p className="text-[#00d4ff] text-[32px] font-bold mb-1">20+</p>
+                <p className="text-primary text-[32px] font-bold mb-1">20+</p>
                 <p className="text-slate-400 text-[13px] font-medium">Technologies</p>
               </div>
             </div>
@@ -69,24 +69,28 @@ export default function About() {
             className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6"
           >
             <FeatureCard
-              icon={<CopySlash className="size-6 mb-4 text-white" />}
+              icon={<CopySlash className="size-6 text-cyan-400" />}
               title="Frontend"
               desc="React, Next.js, TypeScript"
+              color="cyan"
             />
             <FeatureCard
-              icon={<ServerCog className="size-6 mb-4 text-white" />}
+              icon={<ServerCog className="size-6 text-purple-400" />}
               title="Backend"
               desc="Node.js, Express, Prisma"
+              color="purple"
             />
             <FeatureCard
-              icon={<Paintbrush className="size-6 mb-4 text-white" />}
+              icon={<Paintbrush className="size-6 text-rose-400" />}
               title="Design"
               desc="Tailwind CSS, UI/UX"
+              color="rose"
             />
             <FeatureCard
-              icon={<Rocket className="size-6 mb-4 text-white" />}
+              icon={<Rocket className="size-6 text-amber-400" />}
               title="DevOps"
               desc="Vercel, AWS, Docker"
+              color="amber"
             />
           </motion.div>
 
@@ -96,12 +100,24 @@ export default function About() {
   );
 }
 
-function FeatureCard({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) {
+function FeatureCard({ icon, title, desc, color }: { icon: React.ReactNode, title: string, desc: string, color: string }) {
   return (
-    <div className="feature-card p-6 aspect-square flex flex-col justify-center">
-      {icon}
-      <h4 className="text-white font-bold text-[18px] mb-2">{title}</h4>
-      <p className="text-slate-400 text-[14px] leading-relaxed">{desc}</p>
+    <div className={`feature-card p-6 aspect-square flex flex-col justify-center group transition-all duration-500 hover:scale-105 ${
+      color === 'cyan' ? 'hover:border-cyan-500/30' :
+      color === 'purple' ? 'hover:border-purple-500/30' :
+      color === 'rose' ? 'hover:border-rose-500/30' :
+      'hover:border-amber-500/30'
+    }`}>
+      <div className={`mb-4 p-3 rounded-xl w-fit bg-slate-800/50 group-hover:scale-110 transition-transform duration-500 ${
+        color === 'cyan' ? 'group-hover:bg-cyan-500/10' :
+        color === 'purple' ? 'group-hover:bg-purple-500/10' :
+        color === 'rose' ? 'group-hover:bg-rose-500/10' :
+        'group-hover:bg-amber-500/10'
+      }`}>
+        {icon}
+      </div>
+      <h4 className="text-white font-bold text-[18px] mb-2 group-hover:text-gradient transition-all">{title}</h4>
+      <p className="text-slate-400 text-[14px] leading-relaxed group-hover:text-slate-300 transition-colors">{desc}</p>
     </div>
   );
 }

@@ -63,35 +63,35 @@ export default function Experience() {
             className="relative pl-8 md:pl-0"
           >
             {/* Timeline Line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-primary/20 -translate-x-1/2 hidden md:block"></div>
+            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 to-purple/50 -translate-x-1/2 hidden md:block opacity-30"></div>
             
             <div className={`flex flex-col md:flex-row items-center gap-8 ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
               {/* Content Card */}
               <div className="w-full md:w-[45%]">
-                <div className="bg-slate-900/50 p-8 rounded-2xl border border-primary/10 hover:border-primary/30 transition-all group shadow-xl">
+                <div className="feature-card p-8 group">
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="text-white text-2xl font-bold group-hover:text-primary transition-colors">{exp.role}</h3>
-                      <p className="text-primary font-medium">{exp.company}</p>
+                      <h3 className="text-white text-2xl font-bold group-hover:text-gradient transition-all">{exp.role}</h3>
+                      <p className="text-primary font-medium tracking-wide uppercase text-xs mt-1">{exp.company}</p>
                     </div>
-                    <div className="flex flex-col items-end text-xs text-slate-500 font-mono">
-                      <div className="flex items-center gap-1">
-                        <Calendar className="size-3" /> {exp.period}
+                    <div className="flex flex-col items-end text-[10px] text-slate-500 font-mono space-y-1">
+                      <div className="flex items-center gap-1 bg-slate-800/50 px-2 py-1 rounded border border-white/5">
+                        <Calendar className="size-3 text-primary" /> {exp.period}
                       </div>
-                      <div className="flex items-center gap-1">
-                        <MapPin className="size-3" /> {exp.location}
+                      <div className="flex items-center gap-1 bg-slate-800/50 px-2 py-1 rounded border border-white/5">
+                        <MapPin className="size-3 text-purple" /> {exp.location}
                       </div>
                     </div>
                   </div>
                   
-                  <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                  <p className="text-slate-400 text-sm leading-relaxed mb-6 group-hover:text-slate-300 transition-colors">
                     {exp.description}
                   </p>
                   
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {exp.achievements.map((achievement, i) => (
-                      <li key={i} className="flex items-start gap-2 text-xs text-slate-300">
-                        <div className="size-1.5 rounded-full bg-primary mt-1.5 shrink-0"></div>
+                      <li key={i} className="flex items-start gap-3 text-xs text-slate-300 group-hover:text-slate-200 transition-colors">
+                        <div className="size-1.5 rounded-full bg-gradient-to-r from-primary to-purple mt-1.5 shrink-0 shadow-[0_0_8px_rgba(0,212,255,0.5)]"></div>
                         {achievement}
                       </li>
                     ))}
@@ -100,7 +100,7 @@ export default function Experience() {
               </div>
 
               {/* Timeline Dot */}
-              <div className="absolute left-0 md:left-1/2 top-8 size-4 rounded-full bg-primary border-4 border-background-dark -translate-x-1/2 z-10 shadow-[0_0_15px_rgba(71,37,244,0.5)]"></div>
+              <div className="absolute left-0 md:left-1/2 top-8 size-4 rounded-full bg-background-navy border-2 border-primary -translate-x-1/2 z-10 shadow-[0_0_15px_rgba(0,212,255,0.5)] group-hover:scale-125 transition-transform"></div>
 
               {/* Spacer for other side */}
               <div className="hidden md:block md:w-[45%]"></div>

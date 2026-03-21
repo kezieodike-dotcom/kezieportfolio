@@ -76,7 +76,7 @@ export default function Testimonials() {
                     className="flex flex-col items-center justify-center max-w-[540px] mx-auto text-center"
                 >
                     <div className="flex justify-center mb-6">
-                        <div className="border border-[#00d4ff]/30 text-[#00d4ff] bg-[#00d4ff]/5 py-1.5 px-5 rounded-full text-xs font-semibold tracking-wide uppercase">
+                        <div className="border border-primary/30 text-primary bg-primary/5 py-1.5 px-5 rounded-full text-xs font-semibold tracking-wide uppercase">
                             Testimonials
                         </div>
                     </div>

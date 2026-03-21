@@ -20,7 +20,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <div className="flex items-center">
-          <span className="font-bold text-[22px] tracking-tight text-[#00d4ff]">
+          <span className="font-bold text-[22px] tracking-tight text-primary">
             Chikezie<span className="text-white">Dev</span>
           </span>
         </div>

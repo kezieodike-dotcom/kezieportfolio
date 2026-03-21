@@ -64,7 +64,7 @@ export default function Projects() {
           </p>
           <h2 className="text-white font-black text-4xl md:text-5xl leading-tight mb-4">
             Engineering{" "}
-            <span style={{ color: "#00d4ff" }}>Projects</span>
+            <span style={{ color: "var(--primary)" }}>Projects</span>
           </h2>
           <p className="text-slate-400 leading-relaxed max-w-xl">
             High-end digital products and AI systems engineered for scale and
@@ -75,7 +75,9 @@ export default function Projects() {
         {/* Project grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           {projects.map((project, idx) => (
-            <ProjectCard key={idx} {...project} delay={idx * 0.1} />
+            <React.Fragment key={idx}>
+              <ProjectCard {...project} delay={idx * 0.1} />
+            </React.Fragment>
           ))}
         </div>
 
@@ -129,35 +131,46 @@ function ProjectCard({
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -6 }}
+      whileHover={{ y: -8 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay, type: "spring", stiffness: 260, damping: 24 }}
-      className={`${cardClass} p-6 relative overflow-hidden group cursor-pointer`}
+      className={`${cardClass} p-8 relative overflow-hidden group cursor-pointer h-full flex flex-col`}
     >
+      {/* Dynamic Background Glow */}
+      <div className={`absolute -right-10 -top-10 w-40 h-40 rounded-full blur-[80px] opacity-0 group-hover:opacity-20 transition-opacity duration-700 ${
+        isCyan ? 'bg-cyan-500' : 'bg-purple-500'
+      }`} />
+
       {/* Icon badge */}
       <div
-        className="absolute top-5 right-5 w-10 h-10 rounded-xl flex items-center justify-center"
-        style={{ background: iconBg, color: iconColor }}
+        className="w-12 h-12 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg"
+        style={{ background: iconBg, color: iconColor, border: `1px solid ${isCyan ? 'rgba(0,212,255,0.2)' : 'rgba(167,139,250,0.2)'}` }}
       >
         {icon}
       </div>
 
-      <p className="text-slate-300 text-xs font-semibold mb-1">{label}</p>
-      <h3 className="text-white font-bold text-lg mb-3 pr-14">{title}</h3>
+      <div className="flex-1">
+        <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-2 group-hover:text-white/60 transition-colors">{label}</p>
+        <h3 className="text-white font-bold text-2xl mb-4 group-hover:text-gradient transition-all">{title}</h3>
 
-      <div className="flex flex-wrap gap-1.5 mb-4">
-        {tags.map((tag) => (
-          <span key={tag} className={tagClass}>{tag}</span>
-        ))}
+        <div className="flex flex-wrap gap-2 mb-6">
+          {tags.map((tag) => (
+            <span key={tag} className={`${tagClass} group-hover:scale-105 transition-transform`}>{tag}</span>
+          ))}
+        </div>
+
+        <p className="text-slate-300 text-[15px] leading-relaxed mb-8 group-hover:text-slate-200 transition-colors">{description}</p>
       </div>
 
-      <p className="text-slate-200 text-sm leading-relaxed mb-6">{description}</p>
-
       <button
-        className="flex items-center gap-2 text-xs font-bold transition-all"
+        className="flex items-center gap-2 text-sm font-bold transition-all mt-auto"
         style={{ color: isCyan ? "#00d4ff" : "#a78bfa" }}
       >
-        View Project <ArrowRight className="size-3.5 group-hover:translate-x-1 transition-transform" />
+        <span className="relative overflow-hidden group/btn">
+            View Project Details
+            <span className="absolute bottom-0 left-0 w-full h-px bg-current transform origin-left scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300" />
+        </span>
+        <ArrowRight className="size-4 group-hover:translate-x-1.5 transition-transform" />
       </button>
     </motion.div>
   );
