@@ -12,7 +12,7 @@ export default function Footer() {
               </div>
               <span className="font-bold text-xl text-white">Chikezie Emmanuel</span>
             </div>
-            <p className="text-sm text-slate-500 max-w-[300px]">Building scalable digital platforms and intelligent systems.</p>
+            <p className="text-sm text-slate-500 max-w-[300px]">Building practical software for ambitious teams.</p>
           </div>
 
           <div className="flex gap-16">
@@ -32,10 +32,10 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-slate-500">© 2026 Chikezie Emmanuel. All rights reserved. Building scalable digital platforms and intelligent systems.</p>
+          <p className="text-xs text-slate-500">© 2026 Chikezie Emmanuel. All rights reserved. Web platforms, AI products, and reliable systems.</p>
           <div className="flex gap-8">
-            <a href="#" className="text-xs text-slate-500 hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="text-xs text-slate-500 hover:text-primary transition-colors">Terms of Service</a>
+            <a href="mailto:kezieodike@gmail.com?subject=Privacy%20Policy" className="text-xs text-slate-500 hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="mailto:kezieodike@gmail.com?subject=Terms%20of%20Service" className="text-xs text-slate-500 hover:text-primary transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

@@ -1,7 +1,16 @@
+import { useState } from "react";
+import type { FormEvent } from "react";
 import { motion } from "motion/react";
 import { Send, Quote, Linkedin, Twitter, MessageCircle, MapPin, ArrowRight } from "lucide-react";
 
 export default function Contact() {
+  const [sent, setSent] = useState(false);
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setSent(true);
+  }
+
   return (
     <section id="contact" className="px-6 py-24 lg:px-20 max-w-7xl mx-auto w-full">
       <div className="mb-16">
@@ -9,7 +18,7 @@ export default function Contact() {
           Let's Build Something <span className="text-primary">Great</span>
         </h2>
         <p className="text-slate-400 text-lg max-w-2xl text-center mx-auto">
-          Have an idea you want to bring to life? Let’s work together to build a powerful digital product that can grow, scale, and create impact.
+          Have a product idea, an internal workflow to improve, or a platform that needs to scale? Let’s talk through the problem and shape the right technical path.
         </p>
       </div>
 
@@ -21,28 +30,32 @@ export default function Contact() {
           viewport={{ once: true }}
           className="lg:col-span-7 feature-card p-8 shadow-xl"
         >
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-sm font-medium text-slate-300">Full Name</label>
+                <label htmlFor="full-name" className="text-sm font-medium text-slate-300">Full Name</label>
                 <input
+                  id="full-name"
                   type="text"
-                  placeholder="John Doe"
+                  placeholder="Your name"
+                  required
                   className="w-full bg-[#060914]/50 border border-white/10 rounded-lg p-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-white"
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-slate-300">Email Address</label>
+                <label htmlFor="email" className="text-sm font-medium text-slate-300">Email Address</label>
                 <input
+                  id="email"
                   type="email"
                   placeholder="john@example.com"
+                  required
                   className="w-full bg-[#060914]/50 border border-white/10 rounded-lg p-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-white"
                 />
               </div>
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium text-slate-300">Budget Range</label>
-              <select className="w-full bg-[#060914]/50 border border-white/10 rounded-lg p-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-white appearance-none">
+                <label htmlFor="budget" className="text-sm font-medium text-slate-300">Budget Range</label>
+                <select id="budget" className="w-full bg-[#060914]/50 border border-white/10 rounded-lg p-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-white appearance-none">
                 <option value="">Select a range</option>
                 <option value="small">$2,000 - $5,000</option>
                 <option value="medium">$5,000 - $15,000</option>
@@ -50,16 +63,19 @@ export default function Contact() {
               </select>
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium text-slate-300">Project Description</label>
+              <label htmlFor="description" className="text-sm font-medium text-slate-300">Project Description</label>
               <textarea
+                id="description"
                 rows={5}
                 placeholder="Tell me about your project, goals, and technical requirements..."
+                required
                 className="w-full bg-[#060914]/50 border border-white/10 rounded-lg p-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-white"
               ></textarea>
             </div>
-            <button className="w-full btn-primary py-4 flex items-center justify-center gap-2 group cursor-pointer shadow-[0_0_20px_rgba(0,212,255,0.2)]">
-              Send Message <Send className="size-4 group-hover:translate-x-1 transition-transform" />
+            <button type="submit" className="w-full btn-primary py-4 flex items-center justify-center gap-2 group cursor-pointer">
+              {sent ? "Message ready to send" : "Send Message"} <Send className="size-4 group-hover:translate-x-1 transition-transform" />
             </button>
+            {sent && <p role="status" className="text-sm text-primary">Thanks — your message is prepared. Connect by email below to send it.</p>}
           </form>
         </motion.div>
 
@@ -79,9 +95,8 @@ export default function Contact() {
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
                 <img
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop"
-                  alt="Sarah Chen"
-                  referrerPolicy="no-referrer"
+                  src="/profile.png"
+                  alt="Client testimonial portrait"
                   className="w-full h-full object-cover"
                 />
               </div>

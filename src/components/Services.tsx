@@ -49,7 +49,7 @@ export default function Services() {
                         Services I <span className="text-gradient">Offer</span>
                     </h2>
                     <p className="text-slate-400 text-[15px] md:text-[16px]">
-                        Comprehensive solutions tailored to your needs
+                        Focused engineering support from first idea to reliable launch
                     </p>
                 </div>
 

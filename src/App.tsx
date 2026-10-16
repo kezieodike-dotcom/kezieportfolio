@@ -4,6 +4,7 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Services from "./components/Services";
 import WorkProcess from "./components/WorkProcess";
+import Experience from "./components/Experience";
 import Testimonials from "./components/Testimonials";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
@@ -13,8 +14,7 @@ import { motion } from "motion/react";
 export default function App() {
   return (
     <div
-      className="min-h-screen selection:bg-cyan-glow/30 selection:text-white"
-      style={{ background: "#060914" }}
+      className="min-h-screen"
     >
       <Navbar />
 
@@ -29,6 +29,7 @@ export default function App() {
         <Projects />
         <Services />
         <WorkProcess />
+        <Experience />
         <Testimonials />
         <Contact />
       </motion.main>

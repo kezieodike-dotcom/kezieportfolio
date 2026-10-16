@@ -27,14 +27,14 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-white text-[24px] font-bold mb-6">Building Digital Solutions Built for Growth</h3>
+            <h3 className="text-white text-[24px] font-bold mb-6">Turning product ideas into dependable systems</h3>
 
             <div className="space-y-4 text-slate-300 text-[15px] md:text-[16px] leading-[1.7] mb-10">
               <p>
-                I specialize in building modern digital systems that help founders, businesses, and organizations bring their ideas to life. From intelligent AI-driven platforms to scalable web applications, I focus on creating solutions that are efficient, reliable, and built for long-term growth.
+                I help founders and growing teams turn product ideas into dependable software. My work spans AI-powered applications, scalable web platforms, and the backend systems that keep them fast, useful, and ready to grow.
               </p>
               <p>
-                Chikezie Emmanuel is a Fullstack Software Developer and AI Systems Engineer focused on building scalable digital platforms and intelligent systems. His work centers on helping founders, startups, and organizations transform innovative ideas into real, functional technology products.
+                As a Fullstack Software Developer and AI Systems Engineer, I work across product thinking, interface development, APIs, and deployment. The goal is simple: ship technology that solves a real problem and remains maintainable after launch.
               </p>
             </div>
 

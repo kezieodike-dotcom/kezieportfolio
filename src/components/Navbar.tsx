@@ -47,6 +47,9 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
+          type="button"
+          aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isOpen}
           className="lg:hidden text-white p-2"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -73,9 +76,9 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <button className="btn-primary w-full mt-2">
+            <a href="#contact" onClick={() => setIsOpen(false)} className="btn-primary w-full mt-2">
               Get in Touch
-            </button>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>

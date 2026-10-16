@@ -67,8 +67,8 @@ export default function Projects() {
             <span style={{ color: "var(--primary)" }}>Projects</span>
           </h2>
           <p className="text-slate-400 leading-relaxed max-w-xl">
-            High-end digital products and AI systems engineered for scale and
-            performance.
+            Selected products and platforms built to make complex work simpler,
+            faster, and more dependable.
           </p>
         </motion.div>
 

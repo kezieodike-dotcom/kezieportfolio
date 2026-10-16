@@ -3,7 +3,7 @@ import { Github, Linkedin, Twitter, MessageCircle } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen pt-28 pb-20 flex items-center">
+    <section id="home" className="relative min-h-[100dvh] pt-28 pb-20 flex items-center">
 
       {/* Container: 1200px max width, 2-column layout */}
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
@@ -74,7 +74,7 @@ export default function Hero() {
               {/* Replace with actual image source */}
               <img
                 src="/profile.png"
-                alt="Chikezie Profile"
+                alt="Portrait of Chikezie Emmanuel"
                 className="w-full h-full object-cover object-top opacity-90"
                 style={{ filter: "brightness(0.9) contrast(1.1)" }}
               />
