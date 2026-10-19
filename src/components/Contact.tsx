@@ -8,6 +8,15 @@ export default function Contact() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    const name = String(form.get("name") ?? "");
+    const email = String(form.get("email") ?? "");
+    const budget = String(form.get("budget") ?? "Not specified");
+    const description = String(form.get("description") ?? "");
+    const subject = `Portfolio enquiry from ${name}`;
+    const body = [`Name: ${name}`, `Email: ${email}`, `Budget: ${budget}`, "", description].join("\n");
+
+    window.location.href = `mailto:michael.chukuwu.241426@unn.edu.ng?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSent(true);
   }
 
@@ -36,6 +45,7 @@ export default function Contact() {
                 <label htmlFor="full-name" className="text-sm font-medium text-slate-300">Full Name</label>
                 <input
                   id="full-name"
+                  name="name"
                   type="text"
                   placeholder="Your name"
                   required
@@ -46,6 +56,7 @@ export default function Contact() {
                 <label htmlFor="email" className="text-sm font-medium text-slate-300">Email Address</label>
                 <input
                   id="email"
+                  name="email"
                   type="email"
                   placeholder="john@example.com"
                   required
@@ -55,7 +66,7 @@ export default function Contact() {
             </div>
             <div className="space-y-2">
                 <label htmlFor="budget" className="text-sm font-medium text-slate-300">Budget Range</label>
-                <select id="budget" className="w-full bg-[#060914]/50 border border-white/10 rounded-lg p-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-white appearance-none">
+                <select id="budget" name="budget" className="w-full bg-[#060914]/50 border border-white/10 rounded-lg p-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-white appearance-none">
                 <option value="">Select a range</option>
                 <option value="small">$2,000 - $5,000</option>
                 <option value="medium">$5,000 - $15,000</option>
@@ -66,6 +77,7 @@ export default function Contact() {
               <label htmlFor="description" className="text-sm font-medium text-slate-300">Project Description</label>
               <textarea
                 id="description"
+                name="description"
                 rows={5}
                 placeholder="Tell me about your project, goals, and technical requirements..."
                 required
@@ -75,7 +87,7 @@ export default function Contact() {
             <button type="submit" className="w-full btn-primary py-4 flex items-center justify-center gap-2 group cursor-pointer">
               {sent ? "Message ready to send" : "Send Message"} <Send className="size-4 group-hover:translate-x-1 transition-transform" />
             </button>
-            {sent && <p role="status" className="text-sm text-primary">Thanks — your message is prepared. Connect by email below to send it.</p>}
+            {sent && <p role="status" className="text-sm text-primary">Your email app should now be open with the message addressed to Michael.</p>}
           </form>
         </motion.div>
 
@@ -115,7 +127,7 @@ export default function Contact() {
                 { name: "LinkedIn", icon: <Linkedin className="size-5" />, color: "cyan", href: "https://linkedin.com" },
                 { name: "X / Twitter", icon: <Twitter className="size-5" />, color: "purple", href: "https://x.com/ChikezieEmman19" },
                 { name: "WhatsApp", icon: <MessageCircle className="size-5" />, color: "rose", href: "https://wa.me/2348106549123" },
-                { name: "Email", icon: <Send className="size-5" />, color: "cyan", href: "mailto:kezieodike@gmail.com" }
+                { name: "Email", icon: <Send className="size-5" />, color: "cyan", href: "mailto:michael.chukuwu.241426@unn.edu.ng" }
               ].map((social) => (
                 <a
                   key={social.name}
