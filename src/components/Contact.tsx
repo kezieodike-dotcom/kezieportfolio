@@ -5,6 +5,7 @@ import { Send, Quote, Linkedin, Twitter, MessageCircle, MapPin, ArrowRight } fro
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [emailDraft, setEmailDraft] = useState("");
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -16,7 +17,9 @@ export default function Contact() {
     const subject = `Portfolio enquiry from ${name}`;
     const body = [`Name: ${name}`, `Email: ${email}`, `Budget: ${budget}`, "", description].join("\n");
 
-    window.location.href = `mailto:michael.chukuwu.241426@unn.edu.ng?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoUrl = `mailto:michael.chukuwu.241426@unn.edu.ng?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setEmailDraft(mailtoUrl);
+    window.location.href = mailtoUrl;
     setSent(true);
   }
 
@@ -87,7 +90,11 @@ export default function Contact() {
             <button type="submit" className="w-full btn-primary py-4 flex items-center justify-center gap-2 group cursor-pointer">
               {sent ? "Message ready to send" : "Send Message"} <Send className="size-4 group-hover:translate-x-1 transition-transform" />
             </button>
-            {sent && <p role="status" className="text-sm text-primary">Your email app should now be open with the message addressed to Michael.</p>}
+            {sent && (
+              <p role="status" className="text-sm text-primary">
+                Your email app should now be open. If it did not open, <a className="underline" href={emailDraft}>click here to send the message.</a>
+              </p>
+            )}
           </form>
         </motion.div>
 

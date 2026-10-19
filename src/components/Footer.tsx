@@ -25,7 +25,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-col gap-4">
               <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Contact</p>
-              <a href="mailto:kezieodike@gmail.com" className="text-sm text-slate-400 hover:text-primary transition-colors">kezieodike@gmail.com</a>
+              <a href="mailto:michael.chukuwu.241426@unn.edu.ng" className="text-sm text-slate-400 hover:text-primary transition-colors">michael.chukuwu.241426@unn.edu.ng</a>
               <a href="https://wa.me/2348106549123" className="text-sm text-slate-400 hover:text-primary transition-colors">+234 810 654 9123</a>
             </div>
           </div>
